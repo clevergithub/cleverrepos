@@ -12,58 +12,7 @@ parameters:
     mailer_password: null
     locale: fr
     secret: ThisTokenIsNotSoSecretChangeIt
-    WSconnexion:
-        #wsdl: https://localhost:8443/CleverSmsSOAPWebServiceWeb/CleverSMSContactImpl?wsdl
-        #wsdl: https://servicespecifique.clever.fr:8443/CleverSmsSOAPWebServiceWeb/CleverSMSContactImpl?wsdl
-        wsdl: http://services.clever.fr/CleverSmsSOAPWebServiceWeb/CleverSMSContactImpl?wsdl
-        uri: http://contact.webservice.cleversms.clever.fr/
-        login: dole
-        password: 7+N2FfwzbhbZl7ulcTQWByJWfAlYHgXH
-    FormGeneralInfos:
-        name: 'Carpostal - Dole : Confirmation inscription service SMS'
-        label_name: de Carpostal - Dole
-        nameForPass: "Commune de Dole : Récupération de mot de passe"
-        defaultCountrycode: "+33"
-        url: http://www.clever.fr/formulaire/carpostal_dole/modification
-        reply-To:  info@reseau-tgd.fr
-        EmailFrom: support@clever.fr
-        personal: Carpostal - Dole 
-    Fields:
-        civilite: eti9
-        old: eti11
-        city: eti13
-        address: eti5
-        landlinePhone: eti8
-        email: eti1
-        subscriberNumber: eti41
-        frequencyOfUse: eti42
-        titleOfTransport: eti50
-        datecreation: eti77
-        datemodification: eti78
-        login: eti28
-        password: eti29
-        bus:
-            ligne1: eti17
-            ligne2: eti18
-            ligne3: eti19
-            ligne10: eti2
-            ligne11: eti3
-            ligne12: eti4
-            ligne13: eti6
-            ligne14: eti7
-            ligne15: eti10
-            ligne16: eti12
-            ligne17: eti14
-            ligne18: eti15
-            ligne19: eti21
-            ligne20: eti22
-            ligne21: eti23
-            ligne22: eti24
-            ligne23: eti25            
-            ligne-coeur-ville: eti26
-            flexi-job: eti46
-            flexi-prm: eti47
-            services-scolaires: eti48
+   
            
 
       
