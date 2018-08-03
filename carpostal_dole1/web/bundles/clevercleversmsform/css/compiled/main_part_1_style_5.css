@@ -1,0 +1,360 @@
+@font-face {
+    font-family: 'DroidSans';
+    src: url('../../../../../bundles/clevercleversmsform/fonts/DroidSans-webfont.eot');
+    src: url('../../../../../bundles/clevercleversmsform/fonts/DroidSans-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../../../../../bundles/clevercleversmsform/fonts/DroidSans-webfont.ttf') format('truetype'),
+        url('../../../../../bundles/clevercleversmsform/fonts/DroidSans-webfont.svg#DroidSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+/**************************************************
+STICKY FOOTER
+**************************************************/
+html, body {height: 100%;}
+.container {display: table;height: 100%; width:99%; padding:0;}
+.block {display: table-row;height: 1px;}
+.push {height: auto;}
+
+/**************************************************
+GLOBAL
+**************************************************/
+body {
+    font-size: 95%;
+    font-family: DroidSans, Tahoma, Geneva, sans-serif;
+    color: #737373;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.left { float: left;}
+.right { float: right;}
+.clear { clear: both;}
+.last {margin-right: 0 !important; margin-bottom: 0 !important;}
+.first { border: none !important;}
+.light {background-color: #ebeaea;}
+
+a {
+    text-decoration:none;
+    color:#737373;
+    font-weight: bold;
+}
+
+img { 
+    border: none;
+    max-width: 100%;
+    height: auto;	
+}
+
+
+
+
+/**************************************************
+MAIN CONTENT
+**************************************************/
+header{
+    min-height:200px;
+    text-align:center;
+    
+}
+.logo{
+    width: 900px;
+}
+
+#main_container {
+    font-size: 0.875em;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/**************************************************
+LOGIN FORM
+**************************************************/
+
+form{
+    max-width: 900px;
+    width: 100%;
+    margin: 0% auto;
+
+}
+
+form h2 {
+    font-weight: lighter;
+    margin: 0.5% 0;
+}
+
+#form_content{
+    margin-top: 5%;
+    width: 100%;
+    margin-bottom: 1.5%;
+}
+
+
+
+#authentification, 
+#password_lost,
+#left_part,
+#right_part{ width: 45%;}
+#authentification, #left_part{margin-right: 20px;}
+
+#left_part, #right_part{
+    padding: 1%;
+    margin-top: -1%;
+    margin-bottom: 1%;
+}
+
+#button{
+    background-color: #A5A9A9;
+    color: #fff;
+    font-weight: lighter;
+    height: 30px;
+    line-height: 30px;
+    font-size: 0.875em;
+    padding: 1%;
+    margin-top: 10px;
+    display: block;
+    text-align:center;
+    margin-bottom: -3%;
+    margin-top: 0;
+}
+
+#form_content h3{
+    font-weight: lighter;
+    border-bottom: 1px solid #b3d202;
+    margin-bottom: 5%;
+    height: 25px;
+}
+
+#password_lost h3{
+    font-weight: lighter;
+    border-bottom: 1px solid #737373;
+    margin-bottom: 18%;
+}
+
+label{
+    float: left;
+    width: 150px;
+    clear:both;
+    line-height: 30px;
+}
+
+
+input{
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    color: #737373;
+    font-family: DroidSans, Tahoma, Geneva, sans-serif;
+    margin-bottom: 2%;
+    padding-left: 1%;
+}
+
+select{
+    width: 210px;
+    height: 30px;
+    line-height: 30px;
+    color: #737373;
+    font-family: DroidSans, Tahoma, Geneva, sans-serif;
+    margin-bottom: 2%;
+    padding-left: 1%;
+    padding-top: 1%;
+    
+}
+
+
+.ligne{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+input[type="submit"],input[type="button"]{
+    border:none;
+    background-color: #b3d202;
+    color: #fff;
+    width: 150px;
+    margin-top: 3%;
+    margin-bottom: -3%;
+    cursor: pointer;
+    border-left: 5px solid #fff;
+    -moz-transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+}
+
+input[type="button"]:hover,input[type="submit"]:hover{
+    color: #737373;
+    border-left: 5px solid #737373;
+}
+
+input[type="checkbox"]{
+    padding: 0;
+    width: 10px;	
+    height: 10px;
+    margin-bottom: 1%;
+}
+
+#sub_form{font-size: 0.9em;}
+
+
+
+/**************************************************
+VALIDATION FORM
+**************************************************/
+#valid_container{
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #A5A9A9;
+    color: #fff;
+    height: 50px;
+    padding: 2% 0;
+    margin-bottom: 1%;
+    margin-top: 2%
+}
+#sub_form label{
+    width: auto;
+    float: none;
+}
+
+.ui-multiselect{
+    margin-top: 1%
+}
+.ui-multiselect-menu label{
+     width: 100%
+}
+.ui-multiselect-menu input[type="checkbox"]{
+    margin-right: 2%
+}
+#captcha{
+    /*background-color: #545454;*/
+    width: 275px;
+    height: 50px;
+    text-align:center;
+    line-height: 50px;
+    margin-left: 5%;
+}
+
+
+#valid_form{
+    margin-top: -1%;
+    margin-right: 5%;
+    width: 200px;
+}
+
+/*********************************** ERROR MESSAGE **********************************************************/
+
+.blockResult {
+   opacity: 1;
+    width: 400px;
+    font-size: 0.6875em;
+    color: #f8f8f8;
+    font-family: DroidSans, Tahoma, Geneva, sans-serif;
+  
+    margin: 20px auto;
+    padding: 0.5em 2em;
+   
+}
+
+.errorsubmit{
+     background-color: #bf2128; 
+     box-shadow: 5px -5px 0px #9f1d1d;
+}
+.correctsubmit{
+    background-color: #6b9311; 
+     box-shadow: 5px -5px 0px #6b9311;
+}
+
+.blockResult label.error{
+            color:#fff;
+            
+            width: auto;
+            height: auto;
+            line-height: normal;
+            float: none;
+            display: block;
+            }
+
+          
+#valid_inscription{margin: 1% 42%;}
+
+#sub_captcha{font-size: 0.875em;}
+
+/**************************************************
+INFOS COMPLEMENTAIRES
+**************************************************/
+#pusher{ min-height: 50px;}
+#infos_sup{
+    max-width: 900px;
+    widht: 100%;
+    border: 1px solid #b3d202;
+    padding: 0.5%;
+    text-align: center;
+    margin: 0 auto 1% auto;
+    font-size: 0.75em;
+}	
+
+/**************************************************
+FOOTER
+**************************************************/
+
+
+footer span{
+    font-style: italic;
+    border-top: 1px solid #b9b9b9;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    font-size: 0.75em;
+}
+
+footer span a {
+    font-weight:normal;
+        }
+
+/**************************************************
+IE
+**************************************************/
+.IE6 #password_lost h3{margin-bottom: 13%;}
+.IE6 .checkbox{width:10px !important; height:10px !important; margin-bottom:5px !important;} 
+.IE6 #captcha, .IE6 #valid_form{margin-top:2%;}
+
+.IE7 #infos_sup{font-weight: lighter;}
+.IE7 footer { bottom: 30px; right: 100px;}
+
+.IE8 #infos_sup, .IE8 footer {font-size: 12px;}
+.IE8 #infos_sup{font-weight: lighter;}
+.IE8 footer { bottom: 30px; right: 100px;}
+
+.IE9 form {font-size: 14px;}
+.IE9 form h3 {font-size: 14px;} 
+.IE9 #infos_sup, .IE9 footer {font-size: 12px;}
+
+/**************************************************
+MEDIA QUERIES
+**************************************************/
+@media (max-width: 643px) {
+    #authentification, 
+    #password_lost,
+    #left_part,
+    #right_part{ width: 98%; min-height: 300px;}
+    #password_lost, #right_part{ float: left;}
+    #valid_container{height: 125px;}
+    #captcha{margin-left: 15%;}
+    #valid_form{margin-right: 22%;}
+    #valid_inscription{margin: 1% 25%;}
+}
+
+@media (max-width: 643px) and (orientation: landscape){
+    #valid_inscription{margin: 1% 35%;}
+    #captcha{margin-left: 5%; margin-top: 6%;}
+    #valid_form{margin-right: 5%; margin-top: 3%;}
+}
