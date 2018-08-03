@@ -1,0 +1,18 @@
+{% extends "::layout.html.twig" %}
+{% block title %}{{parent()}} - Inscription{% endblock %}
+{%block content%}
+<form id="main" method ="post" {{form_enctype(form)}} action="{{path('register')}}">
+     <center><h2> Inscription au service d'alerte par SMS du reseau de tranport du Grand Dole</h2>  </center>
+    <a href="{{path('login')}}" id="button">Déja inscrit ?</a>
+    <div id="form_content" class="clear" data-redirect="{{path('register')}}"data-505="{{asset('bundles/clevercleversmsform/images/error500.png')}}" data-url="{{asset('bundles/clevercleversmsform/images/ajax-loader.gif')}}">
+  {% include "CleverCleverSMSFormBundle:Contact:formContent.html.twig"%}   
+    </div>
+</form>
+{%endblock%} 
+{%block javascripts%}
+{{parent()}}
+<script>
+   
+    </script>
+<script type ="text/javascript" src="{{asset('bundles/clevercleversmsform/js/validationMain.js') }}" ></script>
+{%endblock%} 

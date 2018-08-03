@@ -1,0 +1,49 @@
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+        Clever\CleverSMSFormBundle\Model\Contact: plaintext
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+    providers:
+        ws_provider:
+            id: ws_contact_provider
+        in_memory:
+            memory:
+                users:
+                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+
+    firewalls:
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+#        login:
+#            pattern:  ^/demo/secured/login$
+#            security: false
+        main_login:
+            pattern:  ^/(inscription|modification/login|modification/envoi-mot-de-passe|index.php)$
+            anonymous: true  
+        secured_area:
+            pattern: ^/modification
+            #wsse: true
+            form_login:
+                provider: ws_provider
+                check_path: login_check
+                login_path: login
+                default_target_path: update
+           
+            logout:
+                path:   logout
+                target: login
+            anonymous:  false
+            #anonymous: ~
+            #http_basic:
+            #    realm: "Secured Demo Area"
+
+    access_control:
+        - { path: ^/demo/secured/hello/admin/, roles: ROLE_ADMIN }
+        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }

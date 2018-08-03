@@ -1,0 +1,20 @@
+{# empty Twig template #}
+<center>
+    <p>
+        <b>   
+        {% for message in app.session.flashbag.get('contact')%}
+      {%if message=='update'%}
+            Votre demande de modification a bien &#233;t&#233; enregistr&#233;e.
+        {%elseif message=='invalidNumber'%}
+            Votre demande de modification ne s'est pas correctement effectuée.<br/>Votre num&#233ro de t&#233l&#233phone ne peut pas être enregistr&#233.
+        {%elseif message=='suppression'%}
+            Votre compte a été supprimé avec succès.<br/>
+            Vous pouvez vous ré-abonner à tout moment en vous rendant sur la <a href="{{path('register')}}"> <u>page d'inscription.</u></a>
+            {%else%}
+            Votre demande de modification ne s'est pas correctement effectuée.<br/>Une erreur est survenue lors du traitement de vos donn&#233es.
+        {%endif%}   
+     {%endfor%}
+        </b>
+    </p>
+    <input type="button" id="retour" onclick="location.href = '{{path('update')}}';" value="Retour"/><br/>
+</center>

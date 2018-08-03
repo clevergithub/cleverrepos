@@ -1,0 +1,20 @@
+register:
+    pattern: inscription
+    defaults: { _controller: CleverCleverSMSFormBundle:Contact:register }
+
+update:
+    pattern: modification/
+    defaults: { _controller: CleverCleverSMSFormBundle:Contact:update }
+    
+#    Gestion des anciens liens disponibles sur les formulaires
+registerdefault:
+    pattern: /
+    defaults: { _controller: CleverCleverSMSFormBundle:Contact:registerDefaultredirect }
+    
+registerindexdefault:
+    pattern: /index.php
+    defaults: { _controller: CleverCleverSMSFormBundle:Contact:registerDefaultredirect }
+
+updatedefault:
+    pattern:  /modif.php
+    defaults: { _controller: CleverCleverSMSFormBundle:Contact:updateDefaultredirect }

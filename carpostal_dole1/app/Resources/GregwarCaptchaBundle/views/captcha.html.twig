@@ -1,0 +1,25 @@
+{% block captcha_widget %}
+{% if is_human %}
+-
+{% else %}
+{% spaceless %}
+
+       <div id="captcha" class="left">
+           <img  class="captchaimage" id="{{ image_id }}"   src="{{ captcha_code }}" alt="" title="captcha" width="{{ captcha_width }}" height="{{ captcha_height }}" />
+    {% if reload %}
+    <script type="text/javascript">
+        function reload_{{ image_id }}() {
+            var img = document.getElementById('{{ image_id }}');
+            img.src = '{{ captcha_code }}?n=' + (new Date()).getTime();
+        }
+    </script>
+    <a class="captcha_reload" href="javascript:reload_{{ image_id }}();"><img title="changer" alt="changer captcha" src="{{asset('bundles/clevercleversmsform/images/refresh.png')}}"/></a>
+            {% endif %}
+        </div>
+       <div id="valid_form" class="right">
+             <label for="code">Entrez le code*</label>
+            {{ form_widget(form) }}<br/>
+        </div>
+{% endspaceless %}
+{% endif %}
+{% endblock %}

@@ -1,0 +1,82 @@
+<div  class="blockResult errorsubmit">
+    <center> <u><b> Erreurs soumission formulaire</b></u></center>
+         {% if errors|length > 0 %}       
+             {% for error in errors %}          
+    <label class="error">  {{ error.messageTemplate }}</label>    
+              {% endfor %}
+         {% endif %}
+</div>
+  {#Section de gauche#}
+<div id="left_part" class="left light">
+            {#civilite#}
+            {{form_label(form.datacontact.gender,'Civilité *')}}
+            {{form_widget(form.datacontact.gender)}}<br/>
+            {#nom#}
+            {{form_label(form.name,'Nom *')}}
+            {{form_widget(form.name,{'attr':{'placeholder':'Votre nom' ,'onblur':'this.value = this.value.substr(0, 1).toUpperCase() + this.value.substr(1);'} })}}<br/>
+            {#prenom#}
+            {{form_label(form.lastname,'Prénom *')}}
+            {{form_widget(form.lastname,{'attr':{'placeholder':'Votre Prénom','onblur':'this.value = this.value.substr(0, 1).toUpperCase() + this.value.substr(1);'} })}}<br/>
+            {#Tel mobile#}
+            {{form_label(form.phone,'Tel. GSM *')}}
+            {{form_widget(form.phone,{'attr':{'placeholder':'Votre numéro mobile 06XXX'} })}}<br/>
+            {#Tel fixe#}
+            {{form_label(form.datacontact.landlinePhone,'Tel. fixe')}}
+            {{form_widget(form.datacontact.landlinePhone,{'attr':{'placeholder':'Votre numéro fixe 04XXX'} })}}<br/>
+            {#email#}
+             {{form_label(form.datacontact.email,'Email *')}}
+             {{form_widget(form.datacontact.email,{'attr':{'placeholder':'Votre adresse email'} })}}
+</div>
+   {#Section de droite#}
+<div id="right_part" class="right light">
+
+             {#Age#}
+             {{form_label(form.datacontact.old,'Age *')}}
+             {{form_widget(form.datacontact.old,{'attr':{'placeholder':'Votre âge'} })}}<br/>
+             {#Adresse#}
+             {{form_label(form.datacontact.address,'Adresse')}}
+             {{form_widget(form.datacontact.address,{'attr':{'placeholder':'Votre adresse'} })}}<br/>
+              {#ville#}
+             {{form_label(form.datacontact.city,'ville')}}
+             {{form_widget(form.datacontact.city,{'attr':{'placeholder':'Votre ville'} })}}<br/>
+
+             {#Numero d'abonné#}
+             {{form_label(form.datacontact.subscriberNumber,"Numéro d'abonné")}}
+             {{form_widget(form.datacontact.subscriberNumber,{'attr':{'placeholder':"Votre numéro d'abonné"} })}}<br/>
+             {#Fréquence d'utilisation#}
+             {{form_label(form.datacontact.frequencyOfUse,"Fréquence d'utilisation")}}
+             {{form_widget(form.datacontact.frequencyOfUse)}}<br/>
+             {#Titre de transport utilisé#}
+             {{form_label(form.datacontact.titleOfTransport,"Titre de transport utilisé")}}
+             {{form_widget(form.datacontact.titleOfTransport)}}<br/>
+            
+</div> 
+
+    {#Section reservée aux préférences#}
+<div id="sub_form" class="clear">
+    <span> Lignes régulières sur lesquelles je souhaite recevoir des informations</span><br/>
+    {{form_widget(form.datacontact.bus ,{'attr':{'class':'ligne'} } )}}
+ {#  
+            <br/>#}
+
+           {#   {%for fo in form.datacontact.bus %}
+                    {{form_widget(fo,{'attr':{'class':'checkbox'} })}}   
+                     {{form_label(fo)}}<br/>
+            {%endfor%}#}
+    <div id="valid_container">
+                {{form_widget(form.datacontact.captcha)}}
+    </div>
+</div> 
+
+{# Si on est sur la page de modif on affiche la case à cocher de désabonnement#}     
+{%if submit=='Envoyer'%}
+{{form_widget(form.datacontact.unregister,{'attr':{'class':'unregister'} })}}<span id="sub_captcha"> Veuillez cocher cette case si vous souhaitez vous désabonner du service d'alerte SMS</span><br/>
+{%else%}
+{{form_widget(form.datacontact.unregister,{'attr':{'class':'unregister','style':'display:none'} })}}
+{%endif%}
+
+ {{ form_rest(form) }}
+<span><i><bold>Les champs marqués d'un (*) sont obligatoires.</bold></i></span>
+<input type="submit" id="valid_inscription" value="{{submit}}"/><br/>
+
+

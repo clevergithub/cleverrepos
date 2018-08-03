@@ -1,0 +1,20 @@
+
+<center>
+    <p>
+        <b>   
+        {% for message in app.session.flashbag.get('contact')%}
+      {%if message=='creation'%}
+            Votre demande d'abonnement a bien &#233;t&#233; enregistr&#233;e.
+            <br/> Un email contenant vos param&#232;tres d'abonn&#233; vous a &#233;t&#233; envoy&#233.
+        {%elseif message=='double'%}
+            Vous êtes d&eacute;ja inscrit au service d'information et alerte.
+        {%elseif message=='invalidNumber'%}
+            Votre inscription ne s'est pas correctement effectuée.<br/>Votre num&#233ro de t&#233l&#233phone ne peut pas être enregistr&#233.
+        {%else%}
+            Votre inscription ne s'est pas correctement effectuée.<br/>Une erreur est survenue lors du traitement de vos donn&#233es.
+        {%endif%}   
+     {%endfor%}
+        </b>
+    </p>
+    <input type="button" id="retour" onclick="location.href = '{{path('register')}}';" value="Retour"/><br/>
+</center>

@@ -1,0 +1,31 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}{{parent()}} - Authentification{% endblock %}
+
+{%block content%}
+
+<br/><br/>
+<center><h2> Service d'alerte par SMS des transports urbains de la ville de Dole</h2> </center>
+<div id="form_content" class="clear" data-redirect="{{path('login')}}"data-505="{{asset('bundles/clevercleversmsform/images/error500.png')}}"> 
+    <!-- Section réservée à l'authentification -->
+    <div id="authentification" class="left">
+        <h3>Authentification</h3>
+        <form action="{{path('login_check')}}" method="post" id="formlogin" >
+            {%include 'CleverFormAuthenticateBundle:Security:authenticationFormContent.html.twig'%}
+        </form>
+    </div>
+    <!-- Section réservée à la demande de mot de passe perdu -->
+    <div id="password_lost" class="right">
+        <h3>Mot de passe perdu ?</h3>
+        <form action="{{path('send_password')}}" method="post" id="passwordlost" data-url="{{asset('bundles/clevercleversmsform/images/ajax-loader.gif')}}">
+           {%include 'CleverFormAuthenticateBundle:Security:sendPassordForm.html.twig'%}
+        </form>
+    </div>   
+</div> 
+<div id="pusher" class="clear"></div>
+
+{%endblock%} 
+{%block javascripts%}
+{{parent()}}
+ <script type ="text/javascript" src="{{asset('bundles/cleverformauthenticate/js/validationLogin.js') }}" ></script>
+{%endblock%} 

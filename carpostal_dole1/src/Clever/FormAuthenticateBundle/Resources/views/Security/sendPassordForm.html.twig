@@ -1,0 +1,22 @@
+<div  class="blockResult errorsubmit" id="sendPassword" >
+    <center> <u><b> Erreurs soumission formulaire</b></u></center>      
+</div>
+<label for="pwd_lost">Mot de passe</label>
+<input  name="pwd_lost" required="true" id="pwd_lost" placeholder="Entrez votre identifiant" /><br/>
+<input type="submit" id="passwordrequest" value="Envoyer" class="right" />
+<div id="pusher" class="clear"></div>
+<center>
+     {% for message in app.session.flashbag.get('contact')%}
+      {%if message=='sendemail'%}
+    Votre demande a bien &#233;t&#233; enregistr&#233;e.
+    <br/> Un email contenant vos param&#232;tres d'abonn&#233; vous a &#233;t&#233; envoy&#233 à l'adresse {{email}}.
+         {%elseif(message=='noadress')%}
+            Votre demande ne peut pas être traitée, car vous n'avez pas renseigné votre adresse électronique lors de l'inscription.<br/>
+            Veuillez contacter le service de communication.
+         {%elseif(message=='notFound')%}
+    Vous n'êtes pas inscrit au <a href="{{path('register')}}">service d'alerte</a>.
+         {%else%}
+    Votre demande ne s'est pas correctement effectuée.<br/>Une erreur est survenue lors du traitement de vos donn&#233es.
+       {%endif%}
+{%endfor%}
+</center>

@@ -1,0 +1,65 @@
+{# Doctype HTML5 #}
+<!DOCTYPE html>
+<!--[if IE 9]> <html class="IE9"> <![endif]-->
+<!--[if IE 8]> <html class="IE8"> <![endif]-->
+<!--[if IE 7]> <html class="IE7"> <![endif]-->
+<!--[if IE 6]> <html class="IE6"> <![endif]-->
+<html>
+    <head>
+        {%include '::meta.html.twig'%}
+        <title>
+            {%block title%}
+            Service d'information et d'alerte par SMS pour le reseau de tranport de voyageurs du Grand Dole - Service Carpostal
+            {%endblock%} 
+        </title>
+
+            {#Inclusion des CSS#}
+         {% stylesheets filter ='cssrewrite,?yui_css''bundles/clevercleversmsform/css/*' output='bundles/clevercleversmsform/css/compiled/main.css'%}
+        <link rel="stylesheet" href ="{{asset_url}}" type ="text/css"/>
+        {%endstylesheets %}
+        <script type ="text/javascript" src="{{asset('bundles/clevercleversmsform/js/html5.js') }}" ></script>
+    </head>
+    <body>
+        <section id="main_container" class="container">
+           {#-------------------------------Header de la page-----------------------#}
+            <header class="block">
+                {%block header%}
+                <h1><a href="http://www.reseau-tgd.fr/"><img class="logo" src="{{asset('bundles/clevercleversmsform/images/logo.png')}}" alt="Logo de la ville"/></a></h1>
+                 {%endblock%}
+            </header>
+            {#------------------------------------------------------------------------#}
+            {#-----------------------------Contenu de la page-------------------------#}
+            <div class="block push"> 
+                 {%block content%}
+
+
+                   {%endblock%} 
+                <p id="infos_sup">Ces informations sont exclusivement destinées au service transport de la ville de Dole. Elles ne donneront lieu à aucune transmission à des tiers. Conformément à la la loi du 06 janvier 1978 relative à l'informatique, aux fichier et aux libertés, vous disposez d'un droit de consultation et de rectification des données qui vous concernent par simple demande à la Direction de la Communication  Ou en remplissant le formulaire de <a href="{{path('update')}}">désinscription</a> au Service SMS</p>
+               
+
+            </div>
+            {#------------------------------------------------------------------------#}
+            {#---------------------------Footer de la page----------------------------#}
+
+
+            <footer class="block">
+                             {%block footer%}
+                <span class="right"><a href="http://communication.clever.fr/alerte-sms-transport-sinscrire-au-systeme-dalerte-sms-transports/" title="Solution d'alerte par SMS avec supervision  et alertes">Alerte SMS transport - Clever Technologies©</a></span>
+       
+                            {%endblock%} 
+            </footer>
+
+            {#------------------------------------------------------------------------#}     
+        </section>
+
+                {#Inclusion JavaScript#}
+
+        {% javascripts filter ='?yui_js''bundles/clevercleversmsform/js/general/*' output='bundles/clevercleversmsform/js/compiled/main.js'%}
+        <script type ="text/javascript" src="{{asset_url}}" ></script>
+        {% endjavascripts %}
+
+        {%block javascripts%}
+        {%endblock%}
+
+    </body>
+</html>

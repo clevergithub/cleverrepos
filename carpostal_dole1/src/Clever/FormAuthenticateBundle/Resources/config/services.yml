@@ -1,0 +1,16 @@
+services:
+    ws_contact_provider:
+        class: Clever\FormAuthenticateBundle\Security\Authentication\Provider\WSContactProvider
+        arguments: [@wscontact]
+        
+#    wsse.security.authentication.provider:
+#        class:  Clever\FormAuthenticateBundle\Security\Authentication\Provider\AuthenticationProvider
+#        arguments: [@ws_contact_provider]
+
+#    wsse.security.authentication.provider:
+#        class:  Clever\FormAuthenticateBundle\Security\Authentication\Provider\UserAuthenticationProvider
+#        arguments: [@wscontact,@security.user_checker,@security.encoder_factory]
+
+#    wsse.security.authentication.listener:
+#        class:  Clever\FormAuthenticateBundle\Security\Firewall\WSContactListener
+#        arguments: [@security.context, @security.authentication.manager]

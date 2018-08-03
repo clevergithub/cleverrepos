@@ -1,0 +1,12 @@
+{# empty Twig template #}
+<div  class="blockResult errorsubmit" id="sendAuthentication">
+    <center> <u><b> Erreurs soumission formulaire</b></u></center> 
+    {% if error %} 
+     <label class="error">Assurez-vous d'avoir renseigné correctement votre identifiant et le mot de passe, le système tient compte des minuscules/majuscules.</label> 
+    {%endif%}
+</div>
+<label for="identifiant">Identifiant</label>
+            <input type="text" name="_username" id="identifiant" placeholder="Entrez votre identifiant" /><br/>
+            <label for="password">Mot de passe</label>
+            <input type="password" name="_password" id="password" placeholder="Entrez votre mot de passe" /><br/>
+            <input type="submit" id="authenticaterequest" value="S'authentifier" class="right" />

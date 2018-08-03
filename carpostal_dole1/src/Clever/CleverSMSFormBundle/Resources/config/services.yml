@@ -1,0 +1,10 @@
+parameters:
+#    location: http://localhost:8080/CleverSmsSOAPWebServiceWeb/CleverSMSContactImpl
+#    uri: http://contact.webservice.cleversms.clever.fr/
+#    login: clevertec
+#    password: cetrevelc
+
+services:
+    wscontact:
+        class : Clever\CleverSMSFormBundle\WebServiceContactProxy\ContactService
+        arguments: [%WSconnexion%,%FormGeneralInfos%,%Fields%]
